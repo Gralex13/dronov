@@ -3,7 +3,8 @@ from .models import Bb, Rubric
 
 def index(request):
     bbs = Bb.objects.all()
-    return render(request, 'bboard/index.html', {'bbs': bbs})
+    rubrics = Rubric.objects.all()
+    return render(request, 'bboard/index.html', {'bbs': bbs, 'rubrics': rubrics})
 
 
 def by_rubric(request, rubric_id):
